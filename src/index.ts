@@ -1,1 +1,1 @@
-export * from './ngx-content-loading.module';
+export * from './ngx-content-loading';
