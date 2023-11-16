@@ -107,7 +107,6 @@
       }
     }
   },
-  "defaultProject": "ngx-content-loader",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "ngx",
