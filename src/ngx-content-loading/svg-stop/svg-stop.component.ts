@@ -1,10 +1,11 @@
 import { Component, Input, ChangeDetectionStrategy, HostBinding } from '@angular/core';
 
 @Component({
-  selector: '[ngx-svg-stop]',
-  templateUrl: './svg-stop.component.html',
-  styleUrls: ['./svg-stop.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: '[ngx-svg-stop]',
+    templateUrl: './svg-stop.component.html',
+    styleUrls: ['./svg-stop.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true
 })
 export class SvgStopComponent {
     @Input() speed: string;

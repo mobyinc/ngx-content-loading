@@ -2,10 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgxContentLoadingComponent } from '../index';
 
 @Component({
-  selector: 'ngx-svg-element',
-  templateUrl: './svg-element.component.html',
-  styleUrls: ['./svg-element.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'ngx-svg-element',
+    templateUrl: './svg-element.component.html',
+    styleUrls: ['./svg-element.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true
 })
 export class SvgElementComponent {
     public clipPathId: string = getId();

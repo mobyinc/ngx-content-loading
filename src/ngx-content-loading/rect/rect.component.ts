@@ -2,11 +2,14 @@ import { Component, Input } from '@angular/core';
 import { SvgElementComponent } from '../svg-element/svg-element.component';
 import { Defaults } from '../defaults.enum';
 import { NgxContentLoadingComponent } from '../ngx-content-loading.component';
+import { SvgStopComponent } from '../svg-stop/svg-stop.component';
 
 @Component({
-  selector: '[ngx-rect]',
-  templateUrl: './rect.component.html',
-  styleUrls: ['./rect.component.scss']
+    selector: '[ngx-rect]',
+    templateUrl: './rect.component.html',
+    styleUrls: ['./rect.component.scss'],
+    standalone: true,
+    imports: [SvgStopComponent]
 })
 export class RectComponent extends SvgElementComponent {
     @Input() public y: string;
