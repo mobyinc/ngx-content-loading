@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "packagr": "ng-packagr -p package.json",
+    "packagr": "ng-packagr -p ng-package.json",
     "clean": "rm -rf dist",
     "release": "npm run packagr && npm publish dist && npm run clean"
   },
@@ -64,12 +64,6 @@
     "ts-node": "~7.0.1",
     "tslint": "~6.1.0",
     "typescript": "4.9.5"
-  },
-  "$schema": "./node_modules/ng-packagr/package.schema.json",
-  "ngPackage": {
-    "lib": {
-      "entryFile": "src/index.ts"
-    }
   },
   "dependencies": {
     "tslib": "^2.0.0"
