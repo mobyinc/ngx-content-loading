@@ -10,7 +10,7 @@ Have a look at a demo app on [Stackblitz](https://ngx-content-loading.stackblitz
 ## Install
 
 
-    npm i --save ngx-content-loading
+    npm i --save ngx-content-loading-2
 
 
 ## Usage
@@ -18,7 +18,7 @@ Have a look at a demo app on [Stackblitz](https://ngx-content-loading.stackblitz
 ### Import the module in your app module
 
 ```javascript
-import { NgxContentLoadingModule } from 'ngx-content-loading';
+import { NgxContentLoadingModule } from 'ngx-content-loading-2';
 
 @NgModule({
     imports: [ NgxContentLoadingModule ]
