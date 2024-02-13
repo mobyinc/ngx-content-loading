@@ -1,4 +1,4 @@
-# ngx-content-loading v0.3.2
+# ngx-content-loading v0.3.3
 
 Angular component to create SVG loading placeholders. Inspired by the awesome [React Content Loader](https://github.com/danilowoz/react-content-loader).
 
