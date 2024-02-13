@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgxContentLoadingModule } from '../../src/ngx-content-loading.module';
+import { NgxContentLoadingModule } from '../../src/index';
 import { CommonModule } from '@angular/common';
 import { ExamplesComponent } from './examples/examples.component';
 
