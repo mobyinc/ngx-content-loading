@@ -14,10 +14,10 @@ import { ListPresetComponent } from './ngx-content-loading/list-preset/list-pres
 
 @NgModule({
   imports: [
+    NgxContentLoadingComponent,
     CommonModule
   ],
   declarations: [
-    NgxContentLoadingComponent,
     RectComponent,
     CircleComponent,
     SvgElementComponent,

@@ -5,6 +5,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     selector: 'ngx-content-loading',
     templateUrl: './ngx-content-loading.component.html',
     styleUrls: [ './ngx-content-loading.component.scss' ],
+    standalone: true,
+    imports: [],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxContentLoadingComponent {
