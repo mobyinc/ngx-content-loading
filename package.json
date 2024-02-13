@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "packagr": "ng-packagr -p package.json",
+    "packagr": "ng-packagr -p ng-package.json",
     "clean": "rm -rf dist",
     "release": "npm run packagr && npm publish dist && npm run clean",
     "cypress:open": "cypress open",
@@ -67,11 +67,6 @@
     "rxjs-compat": "^6.3.3",
     "ts-node": "~7.0.0",
     "typescript": ">=5.2 <5.4"
-  },
-  "ngPackage": {
-    "lib": {
-      "entryFile": "src/index.ts"
-    }
   },
   "dependencies": {
     "tslib": "^2.0.0"
