@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "include": ["**/*.ts"],
+  "angularCompilerOptions": {
+    "strictTemplates": true
+  },
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "sourceMap": false,
+    "types": ["cypress", "node"]
+  }
+}

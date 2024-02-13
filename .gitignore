@@ -4,9 +4,13 @@
 /dist
 /tmp
 /out-tsc
+/demo
 
 # dependencies
 /node_modules
+
+# Angular Cache
+/.angular
 
 # IDEs and editors
 /.idea

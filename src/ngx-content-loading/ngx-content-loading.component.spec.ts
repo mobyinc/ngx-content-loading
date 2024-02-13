@@ -1,25 +1,26 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxContentLoaderComponent } from './ngx-content-loader.component';
+import { NgxContentLoadingComponent } from './ngx-content-loading.component';
 
 describe('NgxContentLoaderComponent', () => {
-  let component: NgxContentLoaderComponent;
-  let fixture: ComponentFixture<NgxContentLoaderComponent>;
+  let component: NgxContentLoadingComponent;
+  let fixture: ComponentFixture<NgxContentLoadingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxContentLoaderComponent ]
+      declarations: [ NgxContentLoadingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxContentLoaderComponent);
+    fixture = TestBed.createComponent(NgxContentLoadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    cy.mount(NgxContentLoadingComponent)
+    cy.get('svg').should('have.length', 1);
   });
 });

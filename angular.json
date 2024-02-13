@@ -59,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-content-loader:build"
+            "buildTarget": "ngx-content-loader:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-content-loader:build:production"
+              "buildTarget": "ngx-content-loader:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-content-loader:build"
+            "buildTarget": "ngx-content-loader:build"
           }
         },
         "test": {
@@ -95,11 +95,57 @@
           "options": {
             "tsConfig": [
               "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "src/tsconfig.spec.json",
+              "cypress/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "ngx-content-loader:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-content-loader:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "ngx-content-loader:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "ngx-content-loader:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "ngx-content-loader:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-content-loader:serve:production"
+            }
           }
         }
       }
@@ -110,27 +156,64 @@
       "projectType": "application",
       "architect": {
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "@cypress/schematic:cypress",
           "options": {
-            "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "ngx-content-loader:serve"
+            "devServerTarget": "ngx-content-loader-e2e:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-content-loader-e2e:serve:production"
+            }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "e2e/tsconfig.e2e.json"
+              "cypress/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "ngx-content-loader-e2e:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-content-loader-e2e:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "ngx-content-loader-e2e:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "ngx-content-loader-e2e:serve:development"
+            }
+          }
         }
       }
     }
   },
-  "defaultProject": "ngx-content-loader",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "ngx",
@@ -139,5 +222,12 @@
     "@schematics/angular:directive": {
       "prefix": "ngx"
     }
+  },
+  "cli": {
+    "analytics": "9b220ad6-e0bf-4b6c-b869-6383127ef33f",
+    "schematicCollections": [
+      "@cypress/schematic",
+      "@schematics/angular"
+    ]
   }
 }
